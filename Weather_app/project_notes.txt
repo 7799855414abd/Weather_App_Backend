@@ -1,0 +1,86 @@
++++++++++++++++++++++++++++++++++++++++++++
+ Weather Forecast Application Documentation
+++++++++++++++++++++++++++++++++++++++++++++
+
+ 1.Greetings
+ --------------
+Thank you for the opportunity to showcase my skills in developing this weather forecast application using Node.js and Express.js. The goal was to create an API that can fetch weather data, including current, historical, and forecast weather information, based on user queries.
+
+
+
+2.Approach to Development
+-------------------------
+Step 1: Setting Up the Project
+-------------------------------
+- We began by initializing a Node.js project and installing necessary dependencies such as Express.js and Axios.
+- Environment variables were set up to securely store the Weatherstack API key.
+
+Step 2: Creating the API Endpoints
+- Three primary endpoints were developed: 
+  - `/api/weather/current`: Fetches the current weather data.
+  - `/api/weather/historical`: Fetches historical weather data.
+  - `/api/weather/forecast`: Fetches weather forecast data.
+
+Step 3: Handling API Requests
+------------------------------
+- For each endpoint, we structured the API calls to the Weatherstack service using Axios. 
+- Query parameters such as location (`query`), units, language, historical date, and forecast days were made dynamic to allow flexibility in user input.
+- Error handling was implemented to ensure the application provides meaningful feedback in case of any issues during the API requests.
+
+Step 4: Testing and Debugging
+--------------------------------
+- We tested each endpoint with different sample URLs to ensure they function as expected. Due to the limitations of the free Weatherstack API plan, historical and forecast data requests return errors, highlighting the need for a premium subscription. 
+
+3. **Accessible Data Through the API
+-------------------------------------
+Current Weather Data
+---------------------
+- The `/api/weather/current` endpoint allows users to access the current weather data for a specific location.
+- Users can provide location data in the form of city names or geographical coordinates.
+- The endpoint supports fetching weather information for multiple locations simultaneously.
+
+Sample URLs to Test:
+----------------------
+- Current weather in Los Angeles: `http://localhost:3000/api/weather/current?query=Los Angeles`
+- Current weather in New York in Fahrenheit: `http://localhost:3000/api/weather/current?query=New York&units=f`
+- Current weather for multiple cities: `http://localhost:3000/api/weather/current?query=London;Tokyo;Paris`
+
+
+4. Historical and Weather Forecast Data
+----------------------------------------
+Unfortunately, due to our free Weatherstack API subscription, we cannot access historical and forecast weather data. Attempting to fetch data from these endpoints will result in errors indicating the need for a premium subscription.
+
+Historical Weather Data
+-------------------------
+- The `/api/weather/historical` endpoint was intended to fetch weather data for specific historical dates. This feature is currently non-functional due to API limitations.
+
+Sample URL for Testing (Expected to Fail):
+-------------------------------------------
+- Historical weather in New York for January 21, 2015: `http://localhost:3000/api/weather/historical?query=New York&historical_date=2015-01-21`
+
+Weather Forecast Data
+----------------------
+- The `/api/weather/forecast` endpoint was designed to provide weather forecasts for up to 14 days. This endpoint is also non-functional with the free API plan.
+
+Sample URL for Testing (Expected to Fail):
+------------------------------------------
+- 7-day weather forecast for Los Angeles: `http://localhost:3000/api/weather/forecast?query=Los Angeles&forecast_days=7`
+
+
+
+5. Starting the Server
+-------------------------
+
+To start the server and test the working endpoints, use the following command in your terminal:
+
+=> node server.js
+
+
+Once the server is running, you can test the available endpoints using the provided URLs. 
+
+
+
+**Final Greetings
+----------------------
+Thank you once again for allowing me to demonstrate my skills. I look forward to any feedback or further opportunities to collaborate on similar projects.
+
